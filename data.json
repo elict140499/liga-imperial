@@ -4,7 +4,8 @@
     "tournament": "Apertura 2026",
     "source": "https://deportesonora.com/index12.php?liga&id_liga=37",
     "sourceDate": "2026-11-11",
-    "version": 1
+    "version": 1,
+    "updated": "2026-11-12"
   },
   "categories": [
     {
@@ -1520,63 +1521,103 @@
         {
           "name": "Velez Ortega Hugo Adan",
           "team": "TOROS FC",
-          "goals": 19
+          "goals": 19,
+          "id": "d1557b7d-01b2-406d-916f-594e3308fa5e",
+          "source": "published"
         },
         {
           "name": "Barrera Carreta Luis Alexander",
           "team": "GORDOS/DAC",
-          "goals": 14
+          "goals": 14,
+          "id": "565e91eb-2de7-4749-a683-2254de9dbc25",
+          "source": "published"
         },
         {
           "name": "Lopez Prieto Enoc",
           "team": "AFERRADOS FC",
-          "goals": 13
+          "goals": 13,
+          "id": "594f2334-f858-4ec2-8119-582282ab5f3c",
+          "source": "published"
         },
         {
           "name": "Martinez Soria Carlos Edmundo",
           "team": "LEONES FC",
-          "goals": 13
+          "goals": 13,
+          "id": "5bf3e947-74a5-4a6d-b3e5-9c8c994366e0",
+          "source": "published"
         },
         {
           "name": "Ruiz Fontes Francisco Mizael",
           "team": "DEPORTIVO HUGOS MR",
-          "goals": 13
+          "goals": 13,
+          "id": "3a3fd540-0440-479c-a87b-c6389a376de6",
+          "source": "published"
         },
         {
           "name": "Lara Padilla Raúl Gerardo",
           "team": "DEPORTIVO NAOMY",
-          "goals": 8
+          "goals": 8,
+          "id": "c363b084-46d9-428b-b491-11a54cc0003b",
+          "source": "published"
         },
         {
           "name": "Alvarez Pacheco Marco Alberto",
           "team": "CUERVOS FC",
-          "goals": 7
+          "goals": 7,
+          "id": "5fbed3b8-960e-421a-8018-4ca070e63f16",
+          "source": "published"
         },
         {
           "name": "Diaz Ramires Milton Emilio",
           "team": "ARSENAL/DON CHICO",
-          "goals": 7
+          "goals": 7,
+          "id": "64823dc1-e497-4151-9142-b75d013597ee",
+          "source": "published"
         },
         {
           "name": "Gamez Valle Daniel Geovanny",
           "team": "ARSENAL/DON CHICO",
-          "goals": 7
+          "goals": 7,
+          "id": "618008f6-7af0-406e-9206-a41915823aec",
+          "source": "published"
         },
         {
           "name": "Huerta Romero Shamar Isaac",
           "team": "DEPORTIVO HUGOS MR",
-          "goals": 7
+          "goals": 7,
+          "id": "e460c2a2-2699-4711-a94f-08a890bbd25e",
+          "source": "published"
         },
         {
           "name": "Serrano Mora Rubén Sebastian",
           "team": "SCRATCH FC",
-          "goals": 7
+          "goals": 7,
+          "id": "975a4f7c-5488-4914-8834-e67576be5f53",
+          "source": "published"
         },
         {
           "name": "Gonzalez Valdez Carlos Eduardo",
           "team": "LOS JARDINES FC",
-          "goals": 6
+          "goals": 6,
+          "id": "64a38bf2-33ca-4e9c-8f0f-68f06a58e4a9",
+          "source": "published"
         }
+      ],
+      "jornadas": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
       ]
     },
     {
@@ -3407,63 +3448,104 @@
         {
           "name": "Chavez Navarrete Jesus Alejandro",
           "team": "DEPORTIVO HERRERA",
-          "goals": 26
+          "goals": 26,
+          "id": "76fcf16c-a4e1-4e88-a179-3a827c3ef319",
+          "source": "published"
         },
         {
           "name": "Soto Miranda Ramon Arath",
           "team": "VILLAS DEL REAL",
-          "goals": 19
+          "goals": 19,
+          "id": "35a1ac85-c2b9-45e2-84b2-926405e7efff",
+          "source": "published"
         },
         {
           "name": "Ramírez Serrano Alan Fernando",
           "team": "DEFECTUOSOS F.C.",
-          "goals": 13
+          "goals": 13,
+          "id": "73c2aff6-b0ad-4336-a628-92fa4ffddef8",
+          "source": "published"
         },
         {
           "name": "Solis Padilla Kevin Eduardo",
           "team": "VICKMARKZ FC",
-          "goals": 12
+          "goals": 12,
+          "id": "1f4dbf1a-79b6-4dc1-ab13-1ea6e74007b3",
+          "source": "published"
         },
         {
           "name": "Moreno Lomeli Jesus Gerardo",
           "team": "COYOTES JEYMARG",
-          "goals": 11
+          "goals": 11,
+          "id": "187bb7e2-0941-489a-8379-0957e84d8748",
+          "source": "published"
         },
         {
           "name": "Contreras Ozuna Erick Noel",
           "team": "COYOTES JEYMARG",
-          "goals": 9
+          "goals": 9,
+          "id": "f0c3aea0-d735-425d-a0f0-6a100a4c3967",
+          "source": "published"
         },
         {
           "name": "Quinta Martinez Rubén Eduardo",
           "team": "DEPORTIVO AGUILAS",
-          "goals": 9
+          "goals": 9,
+          "id": "3c2b5e48-825a-4912-9004-1f7b5663a471",
+          "source": "published"
         },
         {
           "name": "Espinoza Gonzalez Omar Gerardo",
           "team": "COYOTES JEYMARG",
-          "goals": 8
+          "goals": 8,
+          "id": "f0b9facf-e8bd-46e0-9a4d-5ef9b8762b9d",
+          "source": "published"
         },
         {
           "name": "Carranza Estrada Jesús Antonio",
           "team": "VICKMARKZ FC",
-          "goals": 7
+          "goals": 7,
+          "id": "0c646795-1508-4fb7-953c-f8787c8a5cd7",
+          "source": "published"
         },
         {
           "name": "Lopez Granados Jose Mishael",
           "team": "CLUB DEPORTIVO MS",
-          "goals": 7
+          "goals": 7,
+          "id": "81579335-9e10-422c-849c-45b9dbc64102",
+          "source": "published"
         },
         {
           "name": "Valenzuela Bacaricia Javier Antonio",
           "team": "DEPORTIVO ARMENTA",
-          "goals": 7
+          "goals": 7,
+          "id": "c888c4b1-ee38-4b13-bbf6-10cbd3f259af",
+          "source": "published"
         },
         {
           "name": "Arizu Luna Manuel Ignacio",
           "team": "DEPORTIVO ARMENTA",
-          "goals": 6
+          "goals": 6,
+          "id": "400e5df3-d035-4bc9-9be9-6da5fb509540",
+          "source": "published"
         }
+      ],
+      "jornadas": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
       ]
     },
     {
@@ -3616,7 +3698,12 @@
           "cards": []
         }
       ],
-      "scorers": []
+      "scorers": [],
+      "jornadas": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": "2017-2018",
@@ -3768,7 +3855,12 @@
           "cards": []
         }
       ],
-      "scorers": []
+      "scorers": [],
+      "jornadas": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": "2015-2016",
@@ -3920,7 +4012,12 @@
           "cards": []
         }
       ],
-      "scorers": []
+      "scorers": [],
+      "jornadas": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": "2013-2014",
@@ -4010,7 +4107,12 @@
           "cards": []
         }
       ],
-      "scorers": []
+      "scorers": [],
+      "jornadas": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": "verano",
@@ -4043,7 +4145,8 @@
         "PUNTO 29/HB CONSTRUCCION"
       ],
       "matches": [],
-      "scorers": []
+      "scorers": [],
+      "jornadas": []
     },
     {
       "id": "invierno-2026",
@@ -4067,8 +4170,132 @@
         "INTER FC",
         "DEPORTIVO LUNAS"
       ],
-      "matches": [],
-      "scorers": []
+      "matches": [
+        {
+          "id": "invierno-2026-j1-1",
+          "jornada": 1,
+          "date": "2026-11-13",
+          "time": "19:00",
+          "field": "CERRO COLORADO 3",
+          "home": "ZUZUKY FC",
+          "away": "VICKMARKZ",
+          "homeGoals": null,
+          "awayGoals": null,
+          "played": false,
+          "note": "",
+          "goals": [],
+          "cards": []
+        },
+        {
+          "id": "invierno-2026-j1-2",
+          "jornada": 1,
+          "date": "2026-11-14",
+          "time": "21:00",
+          "field": "CERRO COLORADO 2",
+          "home": "REMOLQUES EL SERI",
+          "away": "DEPORTIVO LOBOS",
+          "homeGoals": null,
+          "awayGoals": null,
+          "played": false,
+          "note": "",
+          "goals": [],
+          "cards": []
+        },
+        {
+          "id": "invierno-2026-j1-3",
+          "jornada": 1,
+          "date": "2026-11-15",
+          "time": "19:00",
+          "field": "CERRO COLORADO 1",
+          "home": "DEPORTIVO REAL PICK XI",
+          "away": "CR F.C.",
+          "homeGoals": null,
+          "awayGoals": null,
+          "played": false,
+          "note": "",
+          "goals": [],
+          "cards": []
+        },
+        {
+          "id": "invierno-2026-j1-4",
+          "jornada": 1,
+          "date": "2026-11-14",
+          "time": "19:00",
+          "field": "CERRO COLORADO 4",
+          "home": "LENGUETA FC",
+          "away": "ATLETICO JOSE ORTIZ",
+          "homeGoals": null,
+          "awayGoals": null,
+          "played": false,
+          "note": "",
+          "goals": [],
+          "cards": []
+        },
+        {
+          "id": "invierno-2026-j1-5",
+          "jornada": 1,
+          "date": null,
+          "time": "21:00",
+          "field": "CERRO COLORADO 2",
+          "home": "PINTURAS OSEL REFORMA",
+          "away": "DEFECTUOSOS FC",
+          "homeGoals": null,
+          "awayGoals": null,
+          "played": false,
+          "note": "",
+          "goals": [],
+          "cards": []
+        },
+        {
+          "id": "invierno-2026-j1-6",
+          "jornada": 1,
+          "date": "2026-11-14",
+          "time": "21:00",
+          "field": "CERRO COLORADO 3",
+          "home": "DEPORTIVO LUNAS",
+          "away": "SAN BENITO",
+          "homeGoals": null,
+          "awayGoals": null,
+          "played": false,
+          "note": "",
+          "goals": [],
+          "cards": []
+        },
+        {
+          "id": "invierno-2026-j1-7",
+          "jornada": 1,
+          "date": "2026-11-14",
+          "time": "19:00",
+          "field": "CERRO COLORADO 3",
+          "home": "DEPORTIVO ENRIQUEZ",
+          "away": "NIUPI",
+          "homeGoals": null,
+          "awayGoals": null,
+          "played": false,
+          "note": "",
+          "goals": [],
+          "cards": []
+        },
+        {
+          "id": "invierno-2026-j1-8",
+          "jornada": 1,
+          "date": "2026-11-14",
+          "time": "19:00",
+          "field": "CERRO COLORADO 2",
+          "home": "LUDOPATAS",
+          "away": "INTER FC",
+          "homeGoals": null,
+          "awayGoals": null,
+          "played": false,
+          "note": "",
+          "goals": [],
+          "cards": []
+        }
+      ],
+      "scorers": [],
+      "jornadas": [
+        1
+      ]
     },
     {
       "id": "femenil-libre",
@@ -4076,7 +4303,8 @@
       "group": "Especiales",
       "teams": [],
       "matches": [],
-      "scorers": []
+      "scorers": [],
+      "jornadas": []
     }
   ]
 }
