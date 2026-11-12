@@ -952,11 +952,19 @@ var CATS = {
     "SCRATCH FC","CUERVOS FC","AFERRADOS FC","BLINDOTEX","PINK PANTHER","DEPORTIVO NAOMY",
     "TOCHAS FC","DEPORTIVO HERRERA","LOS REMOLINOS FC","DEPORTIVO PRADERAS","DEPORTIVO HUGOS MR",
     "PUNTO 29/HB CONSTRUCCION"], nota:"Categoría con 24 equipos registrados, sin tabla ni partidos publicados en Apertura 2026."},
-  invierno: { nombre:"Invierno 2026", tabla:[], goleo:null, partidos:[], equiposSolo:[
+  invierno: { nombre:"Invierno 2026", tabla:[], goleo:null, partidos:[
+    [1,"13 Nov 2026","ZUZUKY FC",null,null,"VICKMARKZ","CERRO COLORADO 3","19:00",""],
+    [1,"14 Nov 2026","REMOLQUES EL SERI",null,null,"DEPORTIVO LOBOS","CERRO COLORADO 2","21:00",""],
+    [1,"15 Nov 2026","DEPORTIVO REAL PICK XI",null,null,"CR F.C.","CERRO COLORADO 1","19:00",""],
+    [1,"14 Nov 2026","LENGUETA FC",null,null,"ATLETICO JOSE ORTIZ","CERRO COLORADO 4","19:00",""],
+    [1,"12 Nov 2026","PINTURAS OSEL REFORMA",null,null,"DEFECTUOSOS FC","CERRO COLORADO 2","21:00",""],
+    [1,"14 Nov 2026","DEPORTIVO LUNAS",null,null,"SAN BENITO","CERRO COLORADO 3","21:00",""],
+    [1,"14 Nov 2026","DEPORTIVO ENRIQUEZ",null,null,"NIUPI","CERRO COLORADO 3","19:00",""],
+    [1,"14 Nov 2026","LUDOPATAS",null,null,"INTER FC","CERRO COLORADO 2","19:00",""]], equiposSolo:[
     "ZUZUKY FC","VICKMARKZ","REMOLQUES EL SERI","DEPORTIVO LOBOS","DEPORTIVO REAL PICK XI",
     "CR F.C.","LENGUETA FC","ATLETICO JOSE ORTIZ","PINTURAS OSEL REFORMA","DEFECTUOSOS FC",
     "SAN BENITO","DEPORTIVO ENRIQUEZ","NIUPI","LUDOPATAS","INTER FC","DEPORTIVO LUNAS"],
-    nota:"Invierno 2026: 16 equipos registrados, pero aún no hay datos publicados — la Tabla General está en blanco y todavía no hay jornadas, partidos ni goleo. Sus roles y resultados se pueden capturar desde el Panel de control."},
+    nota:"Invierno 2026: 16 equipos registrados. La Jornada 1 ya está programada; aún no hay resultados ni goleo publicados. Sus roles y resultados se pueden capturar desde el Panel de control."},
   femenil: { nombre:"Femenil Libre", tabla:[], goleo:null, partidos:[], nota:"No hay Tabla General en esta categoría en Apertura 2026: sin equipos ni partidos publicados."}
 };
 var ORDEN = ["imperial","diamante","c1920","c1718","c1516","c1314","verano","invierno","femenil"];
@@ -1006,7 +1014,13 @@ function equiposDe(k){
 function calcularTabla(k){
   var c=CATS[k];
   var jugados=c.partidos.filter(function(p){ return p[3]!==null && p[4]!==null; });
-  if(!jugados.length) return c.tabla;
+  if(!jugados.length){
+    if(c.tabla.length) return c.tabla;
+    /* Torneo con equipos registrados pero sin partidos jugados: la Tabla
+       General se muestra con todos los equipos en ceros. El mensaje de
+       "sin datos" solo queda para torneos sin equipos registrados. */
+    return equiposDe(k).map(function(nm){ return [nm,0,0,0,0,0,0,0,0]; });
+  }
   var map={};
   equiposDe(k).forEach(function(nm){ map[nm]=[nm,0,0,0,0,0,0,0,0]; });
   jugados.forEach(function(p){
