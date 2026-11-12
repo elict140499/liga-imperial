@@ -59,6 +59,19 @@
   nav.main a:hover{background:var(--panel2);color:var(--gold2)}
   nav.main a.active{background:#33156b;border-color:#7c4dff;color:#fff;
     box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 0 14px rgba(109,40,217,.35)}
+  /* El enlace del panel solo se ve con la sesión de administrador iniciada */
+  nav.main a[hidden]{display:none}
+  #btnLogin[hidden]{display:none}
+  /* Sesión iniciada: usuario y enlace de cerrar sesión en la esquina superior */
+  .session-box{display:inline-flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+  .session-box[hidden]{display:none}
+  .session-user{display:inline-flex;align-items:center;gap:.45rem;background:var(--panel);
+    border:1px solid rgba(242,183,5,.5);color:var(--gold2);border-radius:999px;
+    padding:.42rem .85rem;font-size:.88rem;font-weight:700}
+  .session-user svg{width:15px;height:15px;flex:none}
+  .session-logout{background:none;border:none;color:var(--gold2);font-weight:700;font-size:.92rem;
+    cursor:pointer;padding:.5rem .35rem;text-decoration:underline;text-underline-offset:3px;font-family:var(--font-b)}
+  .session-logout:hover{color:var(--gold)}
   /* Selector de torneos del encabezado: NO es navegación, solo elige el torneo */
   .torneo-nav-wrap{position:relative;flex:none}
   .torneo-nav-btn{display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;
@@ -396,8 +409,12 @@
       <a href="#tabla" data-nav="tabla">Tabla General</a>
       <a href="#goleo" data-nav="goleo">Goleo</a>
       <a href="#tarjetas" data-nav="tarjetas">Tarjetas</a>
-      <a href="#admin" data-nav="admin" id="navAdmin">Panel</a>
+      <a href="#admin" data-nav="admin" id="navAdmin" hidden>Panel</a>
       <button class="btn-gold" id="btnLogin" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg><span id="btnLoginTxt">Iniciar Sesión / Registro</span></button>
+      <span class="session-box" id="sessionBox" hidden>
+        <span class="session-user"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span id="sessionUser"></span></span>
+        <button class="session-logout" id="btnLogout" type="button">Cerrar sesión</button>
+      </span>
     </nav>
   </div>
 </header>
@@ -1272,6 +1289,46 @@ if(btnRecargarPanel){
     if(frame) frame.src=PANEL_URL;
   });
 }
+
+/* ============ SESIÓN DEL ADMINISTRADOR (avisos del panel incrustado) ============
+   El panel incrustado avisa por postMessage cuando la sesión cambia:
+   { type:"liga-panel-auth", loggedIn:true/false, user:"..." }.
+   Con sesión iniciada: se muestra el enlace "Panel", se oculta el botón
+   "Iniciar Sesión" y en su lugar aparece el usuario con "Cerrar sesión".
+   Sin sesión: el enlace del panel no aparece y vuelve "Iniciar Sesión". */
+var sesionPanel={loggedIn:false,user:""};
+function actualizarSesionUI(){
+  var navAdmin=document.getElementById("navAdmin");
+  var btnLogin=document.getElementById("btnLogin");
+  var box=document.getElementById("sessionBox");
+  var userEl=document.getElementById("sessionUser");
+  if(navAdmin) navAdmin.hidden=!sesionPanel.loggedIn;
+  if(btnLogin) btnLogin.hidden=sesionPanel.loggedIn;
+  if(box) box.hidden=!sesionPanel.loggedIn;
+  if(userEl) userEl.textContent=sesionPanel.user||"Administrador";
+}
+window.addEventListener("message",function(e){
+  if(e.origin!==PANEL_URL) return;
+  var d=e.data;
+  if(!d || d.type!=="liga-panel-auth") return;
+  sesionPanel.loggedIn=!!d.loggedIn;
+  sesionPanel.user=d.user?String(d.user):"";
+  actualizarSesionUI();
+});
+var btnLogout=document.getElementById("btnLogout");
+if(btnLogout){
+  btnLogout.addEventListener("click",function(){
+    /* Se le pide al panel incrustado que cierre la sesión en el servidor;
+       la página vuelve de inmediato a su estado sin sesión */
+    var frame=document.getElementById("panelFrame");
+    if(frame && frame.contentWindow){
+      try{ frame.contentWindow.postMessage({type:"liga-panel-logout"},PANEL_URL); }catch(err){}
+    }
+    sesionPanel.loggedIn=false; sesionPanel.user="";
+    actualizarSesionUI();
+  });
+}
+actualizarSesionUI();
 
 /* ============ DATOS DESDE data.json (panel del servidor) ============
    La fuente principal es el archivo data.json que vive junto a esta página
