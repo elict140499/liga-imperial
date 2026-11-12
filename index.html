@@ -291,11 +291,18 @@
   .team-card .dt{font-size:.8rem;color:var(--muted);margin-top:.25rem}
   .team-card .dt b{color:var(--gold2)}
 
-  /* Logos de equipos junto al nombre */
-  .tlogo{width:24px;height:24px;object-fit:cover;border-radius:5px;vertical-align:-7px;margin-right:.45rem}
-  .team-card .nm{display:flex;align-items:center;gap:.6rem}
+  /* Logos de equipos junto al nombre: siempre a la izquierda del nombre,
+     en la misma línea horizontal (nunca arriba). La regla global
+     img{display:block} apilaba el logo sobre el texto, por eso aquí el
+     logo es inline-block y los contenedores con nombre son flex en fila. */
+  .tlogo{display:inline-block;width:24px;height:24px;object-fit:cover;border-radius:5px;vertical-align:middle;margin-right:.45rem;flex:none}
+  .team-card .nm{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:.6rem;text-align:left}
   .team-card .tlogo{width:42px;height:42px;border-radius:8px;margin-right:0;vertical-align:middle;flex:none}
-  .scorer .tm .tlogo{width:18px;height:18px;border-radius:4px;vertical-align:-5px;margin-right:.35rem}
+  .scorer .tm{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;text-align:left}
+  .scorer .tm .tlogo{width:18px;height:18px;border-radius:4px;vertical-align:middle;margin-right:.35rem;flex:none}
+  .match .teams .t{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;text-align:left}
+  .match .teams .t.away{justify-content:flex-end;text-align:left}
+  .match .teams .t .tlogo{flex:none}
 
   /* Torneos */
   .torneo-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem}
